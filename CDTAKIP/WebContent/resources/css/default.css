@@ -1,0 +1,73 @@
+.ui-widget, .ui-widget .ui-widget {
+    font-size: 100%!important;
+}
+
+.ui-datatable .ui-datatable-tst1 {
+font-size: 11px!important;
+	
+}
+
+.main { 
+    background-color: #BCC6CC;
+    width: 100%!important;
+}
+
+.ui-panel .ui-panel-content {
+    padding: 0!important;
+    background-color: #fff!important;
+}
+
+.ui-panelGrid{
+	 font-size: 13px!important;
+	
+}
+
+.ui-selectOneMenu{
+	 font-size: 12px!important;
+}
+
+.mystyle.ui-datatable .ui-datatable-header{
+	font-size: 14px;
+
+    }
+
+.mystyle.ui-datatable .ui-datatable-data{
+    background-color: yellow;
+    
+    }
+
+.mystyle.ui-datatable .ui-datatable-odd.ui-state-hover{
+    background:  blue;
+    
+
+    }
+
+.mystyle.ui-datatable .ui-datatable-even.ui-state-hover{
+    background: cadetblue ;
+
+    }
+
+.mystyle.ui-datatable .ui-datatable-even.ui-state-highlight{
+    background: cadetblue ;
+
+    }
+
+    .mystyle.ui-datatable .ui-datatable-odd.ui-state-highlight{
+    background: blue;
+
+    }
+
+    .mystyle.ui-datatable .ui-datatable-data-empty td {
+    color:red;
+    font-weight:bold;
+    }
+    .mystyle.ui-datatable th { 
+    font-family: verdana;
+    font-size: 1em;
+    margin-top: 0px;
+    }
+
+    .mystyle.ui-datatable .ui-expanded-row-content{
+    background:white;
+    }
+

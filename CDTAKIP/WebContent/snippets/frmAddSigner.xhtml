@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form id="form">
+
+
+				<p:panel header="Sanatçı Bilgileri Gir">
+					<p:messages />
+					<p:panelGrid columns="2">
+
+						<p:outputLabel value="Ad :" />
+						<p:inputText value="#{generalAddBean.signer.name}" required="true"
+							requiredMessage="Ad Giriniz" />
+						<h:outputLabel value="Soyad :" />
+						<p:inputText value="#{generalAddBean.signer.surname}"
+							required="true" requiredMessage="Soyad Giriniz" />
+
+						<p:commandButton action="#{generalAddBean.addSigner}"
+							value="Sanatçı Ekle"  update="@form" ajax="false" ></p:commandButton>
+					</p:panelGrid>
+				</p:panel>
+		
+	</h:form>
+
+</ui:composition>

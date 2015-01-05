@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://176.9.128.172:3306/dfdiscom_cd_takip?useUnicode=true&amp;characterEncoding=UTF-8</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.username">dfdis_cd_takip</property>
+		<property name="hibernate.connection.password">danger</property>
+
+		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+
+		<property name="c3p0.min_size">5</property>
+		<property name="c3p0.max_size">20</property>
+		<property name="c3p0.timeout">1800</property>
+		<property name="c3p0.max_statements">50</property>
+		<property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<!-- enabled second level cache <property name="cache.use_second_level_cache">true</property> -->
+
+		<!-- <property name="hbm2ddl.auto">create</property> <property name="hbm2ddl.auto">update</property> 
+			<property name="hbm2ddl.auto">create</property> <property name="hbm2ddl.auto">update</property> -->
+
+		<property name="hibernate.connection.release_mode">after_statement</property>
+		<property name="cache.use_query_cache">true</property>
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- Load all mapping files -->
+		<mapping class="tr.com.cdtakip.entity.Album" />
+		<mapping class="tr.com.cdtakip.entity.Signer" />
+		<mapping class="tr.com.cdtakip.entity.Song" />
+
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form id="formAddSong">
+
+		<p:panel header="Parça Ekle">
+
+			<h:panelGrid columns="2">
+
+				<p:outputLabel value="Sanatçı :" />
+				
+				<p:selectOneMenu value="#{generalAddBean.album.ownerSigner.id}" effect="drop" id="signer"  >
+					<f:selectItem itemLabel="Sanatçı Seç.." itemValue="" />
+					<f:selectItems value="#{generalAddBean.signerList}" var="signer"
+						itemLabel="#{signer.name} #{signer.surname}"
+						itemValue="#{signer.id}">
+					</f:selectItems>
+					<p:ajax listener="#{generalAddBean.valueChanged}" update="album" />
+				</p:selectOneMenu>
+				
+				<p:outputLabel value="Albüm :" />
+				
+				<p:selectOneMenu value="#{generalAddBean.song.ownerAlbum.id}" id="album" >
+					<f:selectItems value="#{generalAddBean.signerAlbumList}" var="album"
+						itemLabel="#{album.name}"
+						itemValue="#{album.id}">
+					</f:selectItems>
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Parça Ad :" />
+				<p:inputText value="#{generalAddBean.song.name}" required="true"
+					requiredMessage="Parça Adı Giriniz" />
+					
+				<h:outputLabel value="Uzunluk :" />
+				<p:inputText value="#{generalAddBean.song.duration}" />
+
+				<p:commandButton action="#{generalAddBean.addSong}"
+					value="Albüm Ekle" ajax="false"></p:commandButton>
+
+			</h:panelGrid>
+		</p:panel>
+
+	</h:form>
+
+</ui:composition>

@@ -1,0 +1,35 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form id="formAddAlbum">
+
+		<p:panel header="Albüm Ekle">
+
+			<h:panelGrid columns="2">
+
+				<p:outputLabel value="Sanatçı Ad :" />
+				<p:selectOneMenu value="#{generalAddBean.album.ownerSigner.id}">
+					<f:selectItem itemLabel="Sanatçı Seç.." itemValue="" />
+					<f:selectItems value="#{generalAddBean.signerList}" var="signer"
+						itemLabel="#{signer.name} #{signer.surname}"
+						itemValue="#{signer.id}"></f:selectItems>
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Albüm Ad :" />
+				<p:inputText value="#{generalAddBean.album.name}" required="true"
+					requiredMessage="Albüm Adı Giriniz" />
+				<h:outputLabel value="Yıl :" />
+				<p:inputText value="#{generalAddBean.album.year}" />
+
+				<p:commandButton action="#{generalAddBean.addAlbum}"
+					value="Albüm Ekle" ajax="false"></p:commandButton>
+
+			</h:panelGrid>
+		</p:panel>
+
+	</h:form>
+
+</ui:composition>

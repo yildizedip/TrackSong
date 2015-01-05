@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form>
+		
+		
+
+		<p:panelGrid columns="2" id="panel" >
+
+			<f:facet name="header">Segbis Portal Giriş</f:facet>
+				<p:outputLabel value="Kullanıcı Adı:" />
+				<p:inputText value="#{loginBean.name }" />
+				<p:outputLabel value="Parola:" />
+				<p:password value="#{loginBean.password}" feedback="true"
+					promptLabel="Lütfen şifre giriniz" weakLabel="Zayıf"
+					goodLabel="Orta seviye" strongLabel="Güçlü" />
+					
+				<p:commandButton action="#{loginBean.login}"  update="panel" value="Giriş"  />
+				
+				<h:outputLabel value="#{loginBean.error.message}"></h:outputLabel>
+
+			</p:panelGrid>
+
+	</h:form>
+</ui:composition>

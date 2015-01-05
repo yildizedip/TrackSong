@@ -1,0 +1,68 @@
+.mainTable {
+	margin-left: auto;
+	margin-right: auto;
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+}
+
+.caption1 {
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+	color: blue;
+}
+
+.caption2 {
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+	color: red;
+}
+
+.heading {
+	background:#b5cfd2 url('cell-blue.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+
+.even {
+	background:#dcddc0 url('cell-grey.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+
+.odd {
+	background:#dcddc0 url('cell-grey.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+
+.imagetable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+}
+.imagetable th {
+	background:#b5cfd2 url('cell-blue.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+.imagetable td {
+	background:#dcddc0 url('cell-grey.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}

@@ -1,0 +1,68 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form id="formListALbum" >
+
+		<p:dataTable var="album" value="#{generalAddBean.albumList}"
+			widgetVar="albumTable" paginator="true" rows="20"
+			emptyMessage="Filtreleme sonucu veri bulunamadı"
+			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} 
+							{PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			rowsPerPageTemplate="10,20,30,50,100" id="tblAlbum"
+			tableStyleClass="ui-datatable-tst1" rowIndexVar="rowIndex">
+			<f:facet name="header">Albüm Listem</f:facet>
+			<p:ajax event="rowEdit" listener="#{generalAddBean.onRowEdit}"	update="tblAlbum" />
+			<p:ajax event="rowEditCancel"
+				listener="#{generalAddBean.onRowCancel}" update="tblAlbum" />
+			<!-- row index -->
+			<p:column width="22">
+
+				<h:outputText value="#{rowIndex+1}"></h:outputText>
+			</p:column>
+
+			<!-- SIGNER -->
+
+			<p:column sortBy="#{album.ownerSigner.name}" filterBy="#{album.ownerSigner.name}"
+				filterMatchMode="contains" headerText="Sanatçı" >
+			
+				<h:outputText value="#{album.ownerSigner.name}" style="width:100px; height:22px" />
+
+			</p:column>
+
+			<!-- ALBUM -->
+
+			<p:column sortBy="#{album.name}" filterBy="#{album.name}"
+				filterMatchMode="contains" headerText="Album" >
+			
+				<h:outputText value="#{album.name}" style="width:100px; height:22px" />
+
+			</p:column>
+			
+			<!-- YEAR -->
+
+			<p:column sortBy="#{album.year}" filterBy="#{album.year}"
+				filterMatchMode="contains" headerText="Album" >
+			
+				<h:outputText value="#{album.year}" style="width:100px; height:22px" />
+
+			</p:column>
+			
+			
+			<p:column style="width:38px">
+				<p:rowEditor />
+
+				<p:commandLink action="#{generalAddBean.deleteAlbum(album)}"
+					value="Sil" update="tblAlbum" ajax="false">
+					<f:param name="action" value="delete" />
+					
+				</p:commandLink>
+			</p:column>
+
+		</p:dataTable>
+
+	</h:form>
+
+</ui:composition>

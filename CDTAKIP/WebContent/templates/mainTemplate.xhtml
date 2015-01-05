@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	<f:facet name="first">
+		<meta http-equiv="X-UA-Compatible" content="IE=8" />
+		<meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<title><ui:insert name="title"></ui:insert></title>
+	</f:facet>
+
+	<h:outputStylesheet name="default.css" library="css" />
+
+	<script type="text/javascript">
+		PrimeFaces.locales['tr'] = {
+			closeText : 'kapat',
+			prevText : 'geri',
+			nextText : 'ileri',
+			currentText : 'bugün',
+			monthNames : [ 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs',
+					'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım',
+					'Aralık' ],
+			monthNamesShort : [ 'Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz',
+					'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara' ],
+			dayNames : [ 'Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe',
+					'Cuma', 'Cumartesi' ],
+			dayNamesShort : [ 'Pz', 'Pt', 'Sa', 'Ça', 'Pe', 'Cu', 'Ct' ],
+			dayNamesMin : [ 'Pz', 'Pt', 'Sa', 'Ça', 'Pe', 'Cu', 'Ct' ],
+			weekHeader : 'Hf',
+			firstDay : 1,
+			isRTL : false,
+			showMonthAfterYear : false,
+			yearSuffix : '',
+			timeOnlyTitle : 'Zaman Seçiniz',
+			timeText : 'Zaman',
+			hourText : 'Saat',
+			minuteText : 'Dakika',
+			secondText : 'Saniye',
+			ampm : false,
+			month : 'Ay',
+			week : 'Hafta',
+			day : 'Gün',
+			allDayText : 'Tüm Gün'
+		};
+
+
+	
+	</script>
+
+
+</h:head>
+<h:body styleClass="main">
+
+	<p:ajaxStatus onstart="PF('statusDialog').show();"
+		onsuccess="PF('statusDialog').hide();" />
+
+	<p:dialog modal="true" showHeader="false" widgetVar="statusDialog"
+		resizable="false" header="İşlem Gerçekleştiriliyor.."
+		draggable="false" closable="false" hideEffect="explode">
+		<p:graphicImage value="./resources/images/ajax-loader.gif" />
+	</p:dialog>
+
+	<p />
+
+	<table border="1" align="left">
+		<tr>
+			<td align="center" valign="top">
+			
+			
+							<ui:insert name="list" />
+					
+				
+				</td>
+		</tr>
+	</table>
+	<p />
+	<br clear="all" />
+
+
+</h:body>
+</html>
